@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\authController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/daftar',[authController::class,'registerForm']);
+Route::post('/daftar',[authController::class,'register'])->name('daftar');
+
+
+Route::get('/',[authController::class,'login']);
+Route::post('/',[authController::class,'masuk']);
+Route::get('/dashboard',[userController::class,'index'])->name('user.dashboard');
