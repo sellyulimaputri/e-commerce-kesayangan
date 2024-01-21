@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ use App\Http\Controllers\userController;
 Route::get('/daftar',[authController::class,'registerForm']);
 Route::post('/daftar',[authController::class,'register'])->name('daftar');
 
+Route::get('/dashboard-admin',[adminController::class,'index'])->name('admin.dashboard');
 
 Route::get('/',[authController::class,'login']);
 Route::post('/',[authController::class,'masuk']);

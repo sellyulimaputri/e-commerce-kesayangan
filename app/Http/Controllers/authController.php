@@ -30,7 +30,7 @@ class authController extends Controller
             
     
             if ($data->user_type == 'admin') {
-                return redirect('/daftar');
+                return redirect('/dashboard-admin');
             } elseif ($data->user_type == 'user') {
                 return redirect('/dashboard');
             } else {
