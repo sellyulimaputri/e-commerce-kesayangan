@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('batik', function (Blueprint $table) {
             $table->id('id_batik');
             $table->string('nama_batik');
+            $table->binary('foto_batik')->nullable();
             $table->string('kategori_batik');
             $table->integer('stok_batik');
+            $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
     }
