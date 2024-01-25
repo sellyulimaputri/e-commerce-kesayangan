@@ -326,10 +326,17 @@
                                 Builder</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/" class="nav-link text-body font-weight-bold px-0">
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+                                class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Sign Out</span>
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -529,8 +536,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
             <div class="row my-4">
                 <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
                     <div class="card">
@@ -968,7 +975,7 @@
                                     tr[i].style.display = "";
                                 } else if (searchBy === "category") {
                                     var category = tr[i].getElementsByTagName("td")[
-                                    1]; // Ganti dengan indeks kolom kategori
+                                        1]; // Ganti dengan indeks kolom kategori
                                     if (category) {
                                         var categoryValue = category.textContent || category.innerText;
                                         if (categoryValue.toUpperCase().indexOf(input) > -1) {
@@ -1399,7 +1406,7 @@
                 <!-- Navbar Fixed -->
                 <div class="mt-3">
                     <h6 class="mb-0">Navbar Fixed</h6>
-                </div> 
+                </div>
                 <div class="form-check form-switch ps-0">
                     <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
                         onclick="navbarFixed(this)">

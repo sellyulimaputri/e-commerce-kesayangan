@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class authController extends Controller
 {
+    // public function logout(){
+    //     Auth::logout();
+    //     return redirect('/'); // Ganti dengan URL yang sesuai setelah logout
+    // }
     public function login(){
         return view('auth.login');
     }

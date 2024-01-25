@@ -28,3 +28,5 @@ Route::get('/dashboard-admin',[adminController::class,'index'])->name('admin.das
 Route::get('/',[authController::class,'login']);
 Route::post('/',[authController::class,'masuk']);
 Route::get('/dashboard',[userController::class,'index'])->name('user.dashboard');
+
+Route::post('/logout', [authController::class,'logout'])->name('logout');
