@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\batik;
 use Illuminate\Http\Request;
 
 class userController extends Controller
@@ -12,6 +13,7 @@ class userController extends Controller
             return redirect('404')->with('error', 'login o sek');
         }
         $user_id = $req->session()->get('user_id');
-        return view('user.index');
+        $data = batik::where('IsDelete',0)->paginate(100);
+        return view('user.index', ['data' => $data]);
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\batikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,11 @@ Route::post('/',[authController::class,'masuk']);
 Route::get('/dashboard',[userController::class,'index'])->name('user.dashboard');
 
 Route::post('/logout', [authController::class,'logout'])->name('logout');
+
+// batik produk
+Route::get('/batik-read',[batikController::class,'index'])->name('batik.read');
+Route::get('/batik-create',[batikController::class,'create'])->name('batik.create');
+Route::post('/batik-read',[batikController::class,'store'])->name('batik.store');
+
+//user
+Route::get('/batik-read',[userController::class,'index'])->name('batik.read');
