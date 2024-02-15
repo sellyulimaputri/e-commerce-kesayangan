@@ -38,4 +38,4 @@ Route::get('/batik-create',[batikController::class,'create'])->name('batik.creat
 Route::post('/batik-read',[batikController::class,'store'])->name('batik.store');
 
 //user
-Route::get('/batik-read',[userController::class,'index'])->name('batik.read');
+Route::get('/batik-user-read',[userController::class,'index'])->name('batik.user.read');

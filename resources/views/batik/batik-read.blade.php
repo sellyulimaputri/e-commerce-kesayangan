@@ -41,7 +41,6 @@
             }
         });
     </script>
-
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
@@ -67,6 +66,7 @@
                                         Nama</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Kategori</th>
+                                   
                                     {{-- <th
                                     class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Status</th> --}}
@@ -83,8 +83,8 @@
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
-                                                        <img src="data:image/png;base64,{{ base64_encode($da->foto_batik) }}" class="avatar avatar-sm me-3"
-                                                            alt="user1">
+                                                        <img src="data:image/png;base64,{{ base64_encode($da->foto_batik) }}"
+                                                            class="avatar avatar-sm me-3" alt="user1">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">{{ $da->nama_batik }}</h6>
@@ -99,8 +99,8 @@
                                                 {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
                                             </td>
                                             {{-- <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">Online</span>
-                                </td> --}}
+                                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                                            </td> --}}
                                             <td class="align-middle text-center">
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $da->stok_batik }}</span>

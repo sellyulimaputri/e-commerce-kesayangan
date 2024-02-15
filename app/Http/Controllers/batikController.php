@@ -33,25 +33,43 @@ class batikController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $batik = new batik();
-        $batik->nama_batik = $request->nama_batik;
-        $batik->foto_batik = $request->foto;
-        $batik->kategori_batik = $request->kategori_batik;
-        $batik->stok_batik = $request->stok_batik;
-        $batik->save();
-    
-        return redirect('/batik-read')->with('pesan', 'Data batik Berhasil Disimpan');
-    }
+        $this->validate($request, [
+            'nama_batik'     => 'required',
+            'foto_batik'     => 'required|image|mimes:png,jpg,jpeg',
+            'kategori_batik'     => 'required',
+            'stok_batik'     => 'required',
+            'harga_batik'   => 'required'
+        ]);
 
-    function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[random_int(0, $charactersLength - 1)];
+         //upload image
+        $image = $request->file('foto_batik');
+        $image->storeAs('public/upload', $image->hashName());
+
+        $batik = batik::create([
+            'nama_batik'     => $request->nama_batik,
+            'foto_batik'     => $image->hashName(),
+            'kategori_batik'   => $request->kategori_batik,
+            'stok_batik'   => $request->stok_batik,
+            'harga_batik'   => $request->harga_batik,
+        ]);
+        
+        // $batik = new batik();
+        // $batik->nama_batik = $request->nama_batik;
+        // $batik->foto_batik = $request->foto;
+        // $batik->kategori_batik = $request->kategori_batik;
+        // $batik->stok_batik = $request->stok_batik;
+        // $batik->harga_batik = $request->harga_batik;
+        // $batik->save();
+    
+        // return redirect('/batik-read')->with('pesan', 'Data batik Berhasil Disimpan');
+
+        if($batik){
+            //redirect dengan pesan sukses
+            return redirect()->route('batik.read')->with(['success' => 'Data Berhasil Disimpan!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('batik.read')->with(['error' => 'Data Gagal Disimpan!']);
         }
-        return $randomString;
     }
 
     /**

@@ -35,9 +35,9 @@
                         <input class="form-control" type="file" name="foto" >
                     </div>
                     <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2"
-                            placeholder="Apartment, studio, or floor">
+                        <label for="inputAddress2" class="form-label">Harga Batik</label>
+                        <input type="text" class="form-control" name="harga_batik" id="inputAddress2"
+                            placeholder="">
                     </div>
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">City</label>

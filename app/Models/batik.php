@@ -10,5 +10,5 @@ class batik extends Model
     use HasFactory;
     protected $table = 'batik';
     protected $primaryKey = 'id_batik';
-    protected $fillable = ['id_batik', 'nama_batik', 'foto_batik', 'kategori_batik', 'stok_batik'];
+    protected $fillable = ['id_batik', 'nama_batik', 'foto_batik', 'kategori_batik', 'harga_batik', 'stok_batik'];
 }

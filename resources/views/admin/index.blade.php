@@ -545,6 +545,8 @@
                                         Nama</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Kategori</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        harga</th>
                                     {{-- <th
                                     class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Status</th> --}}
@@ -574,6 +576,11 @@
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">
                                                     {{ $da->kategori_batik }}</p>
+                                                {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">
+                                                    {{ $da->harga_batik }}</p>
                                                 {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
                                             </td>
                                             {{-- <td class="align-middle text-center text-sm">
